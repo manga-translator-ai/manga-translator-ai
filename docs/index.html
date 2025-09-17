@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Manga Translator AI</title>
+    <meta name="description" content="利用先进人工智能技术，为漫画爱好者提供快速、准确、自然的漫画翻译服务的在线平台。" />
+    <!-- Open Graph / Social Meta Tags - 关键：替换图片URL -->
+    <meta property="og:title" content="Manga Translator AI" />
+    <meta property="og:description" content="利用先进人工智能技术，为漫画爱好者提供快速、准确、自然的漫画翻译服务的在线平台。" />
+    <meta property="og:url" content="https://manga-translator-ai.vercel.app" />
+    <meta property="og:image" content="https://manga-translator-ai.vercel.app/og-image.png" /> <!-- <<<<< 替换为你的实际图片URL -->
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!-- 替换为你的favicon URL -->
+    <link rel="icon" href="https://manga-translator-ai.vercel.app/favicon.ico" />
+    <style>
+        :root { --primary-color: #007bff; --secondary-color: #6c757d; --bg-color: #f8f9fa; --text-color: #333; --accent-color: #ff6b6b; --hero-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg-color); color: var(--text-color); margin: 0; padding: 0; line-height: 1.6; }
+        .container { max-width: 960px; margin: 30px auto; padding: 20px; background-color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 10px; }
+        header { text-align: center; padding-bottom: 20px; border-bottom: 1px solid #eee; margin-bottom: 30px; }
+        h1 { color: var(--primary-color); margin-bottom: 0.5em; font-size: 2.2em; }
+        h2 { color: var(--secondary-color); border-bottom: 2px solid var(--accent-color); padding-bottom: 5px; margin-top: 1.5em; font-size: 1.6em; }
+        .hero { text-align: center; padding: 50px 20px; background: var(--hero-gradient); color: white; border-radius: 8px; margin-bottom: 30px; position: relative; overflow: hidden; }
+        .hero h1 { color: white; font-size: 2.8em; margin-bottom: 0.6em; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); }
+        .hero p { font-size: 1.3em; opacity: 0.95; margin-bottom: 1.8em; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
+        .cta-button { display: inline-block; padding: 16px 38px; background-color: var(--accent-color); color: white; text-decoration: none; border-radius: 50px; font-size: 1.3em; font-weight: bold; margin: 20px 0; transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; box-shadow: 0 5px 10px rgba(255, 107, 107, 0.35); border: none; cursor: pointer; }
+        .cta-button:hover { background-color: #e05252; transform: translateY(-3px) scale(1.03); box-shadow: 0 7px 14px rgba(255, 107, 107, 0.45); }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin: 35px 0; }
+        .feature-item { background-color: #f0f8ff; padding: 22px; border-radius: 8px; border-left: 5px solid var(--primary-color); box-shadow: 0 2px 5px rgba(0,0,0,0.07); }
+        .feature-item h3 { margin-top: 0; color: var(--primary-color); margin-bottom: 10px; font-size: 1.25em; }
+        .feature-item p { margin-bottom: 0; font-size: 0.98em; }
+        .screenshot { text-align: center; margin: 35px 0; }
+        .screenshot img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.15); cursor: pointer; transition: transform 0.25s ease; border: 1px solid #eee; }
+        .screenshot img:hover { transform: scale(1.025); }
+        .tech-stack, .support { margin: 25px 0; padding: 20px; background-color: #fdf6e3; border-radius: 8px; border: 1px solid #eee; }
+        .tech-stack h3, .support h3 { margin-top: 0; color: var(--secondary-color); border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .support ul { list-style: none; padding: 0; margin: 15px 0; }
+        .support li { margin: 12px 0; padding-left: 25px; position: relative; }
+        .support li:before { content: '✅'; position: absolute; left: 0; top: 2px; }
+        footer { text-align: center; margin-top: 45px; padding-top: 20px; border-top: 1px solid #eee; color: var(--secondary-color); font-size: 0.92em; }
+        .badge { display: inline-block; margin: 6px 8px; vertical-align: middle; }
+        .badge img { height: 24px; border-radius: 4px; }
+        @media (max-width: 768px) {
+            .container { margin: 15px; padding: 15px; }
+            .hero { padding: 40px 15px; }
+            .hero h1 { font-size: 2.1em; }
+            .hero p { font-size: 1.1em; }
+            .cta-button { padding: 14px 30px; font-size: 1.15em; }
+            .features { grid-template-columns: 1fr; gap: 20px; }
+            h1 { font-size: 1.9em; }
+            h2 { font-size: 1.4em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌟 Manga Translator AI</h1>
+            <div>
+                <!-- 徽章链接 -->
+                <a href="https://manga-translator-ai.vercel.app" class="badge" target="_blank" rel="noopener"><img src="https://img.shields.io/badge/demo-live-green?style=flat-square&logo=vercel" alt="Live Demo"></a>
+                <a href="https://github.com/<你的用户名>/manga-translator-ai" class="badge" target="_blank" rel="noopener"><img src="https://img.shields.io/github/stars/<你的用户名>/manga-translator-ai?style=flat-square&logo=github" alt="GitHub Stars"></a>
+                <a href="https://github.com/<你的用户名>/manga-translator-ai/blob/main/LICENSE" class="badge" target="_blank" rel="noopener"><img src="https://img.shields.io/github/license/<你的用户名>/manga-translator-ai?style=flat-square" alt="License"></a>
+            </div>
+        </header>
+
+        <section class="hero">
+            <h1>让 AI 打破漫画的语言障碍</h1>
+            <p>智能识别对话气泡，精准翻译文字内容，自然渲染译文风格，畅享全球漫画！</p>
+            <a href="https://manga-translator-ai.vercel.app" target="_blank" rel="noopener" class="cta-button">立即体验在线网站 →</a>
+        </section>
+
+        <section>
+            <h2>📖 项目简介</h2>
+            <p><strong>Manga Translator AI</strong> 是一个利用先进人工智能技术，为漫画爱好者提供**快速、准确、自然**的漫画翻译服务的在线平台。告别生硬的机翻！我们专注于：</p>
+            <ul>
+                <li>✅ 精准识别漫画对话气泡、文字框。</li>
+                <li>✅ 结合上下文和角色语气，生成更地道的译文。</li>
+                <li>✅ 尽可能保留原漫画的艺术风格和字体效果（在目标语言允许范围内）。</li>
+                <li>✅ 支持多种源语言和目标语言之间的互译。</li>
+                <li>✅ 用户友好的界面，轻松上传、翻译、下载。</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>✨ 核心功能</h2>
+            <div class="features">
+                <div class="feature-item">
+                    <h3>🖼️ 上传漫画图片</h3>
+                    <p>支持 JPG, PNG, WebP, GIF 等常见图片格式，轻松上传您的漫画页面。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🔍 自动检测文字区域</h3>
+                    <p>AI 智能识别对话气泡、旁白框、拟声词等，精准定位需要翻译的文本。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🤖 AI 翻译引擎</h3>
+                    <p>利用先进的自然语言处理技术，提供高质量、符合语境的翻译结果。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🎨 智能文本渲染</h3>
+                    <p>将译文以合适的字体、大小、颜色和位置自然、美观地融入原图，尽量保持原貌。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>🌐 多语言互译</h3>
+                    <p>选择您的漫画源语言（如日语、中文、英语等）和想要的目标语言进行翻译。</p>
+                </div>
+                <div class="feature-item">
+                    <h3>💾 下载翻译结果</h3>
+                    <p>一键保存翻译完成后的漫画图片，方便分享或离线阅读。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="screenshot">
+            <h2>🚀 立即访问</h2>
+            <!-- 关键：替换图片URL -->
+            <a href="https://manga-translator-ai.vercel.app" target="_blank" rel="noopener">
+                <img src="https://manga-translator-ai.vercel.app/og-image.png" alt="Manga Translator AI 网站截图">
+            </a>
+            <p><a href="https://manga-translator-ai.vercel.app" target="_blank" rel="noopener" class="cta-button">👉 点击访问 Manga Translator AI 网站</a></p>
+        </section>
+
+        <section class="tech-stack">
+            <h3>💻 技术栈</h3>
+            <p><strong>前端框架</strong>: <a href="https://nextjs.org/" target="_blank" rel="noopener">Next.js</a>, <a href="https://react.dev/" target="_blank" rel="noopener">React</a>, <a href="https://tailwindcss.com/" target="_blank" rel="noopener">Tailwind CSS</a> (部署于 <a href="https://vercel.com/" target="_blank" rel="noopener">Vercel</a>)<br>
+               <strong>后端/AI 引擎</strong>: [自研多模态漫画翻译模型 (基于 Transformer)]<br>
+               <strong>图像处理</strong>: Canvas API, 自定义渲染算法</p>
+        </section>
+
+        <section class="support">
+            <h3>🤝 贡献与支持</h3>
+            <p>如果您觉得这个项目对您有帮助，欢迎通过以下方式支持我们：</p>
+            <ul>
+                <li>在 <a href="https://github.com/manga-translator-ai/manga-translator-ai" target="_blank" rel="noopener">GitHub</a> 上给我们一个 ⭐ <strong>Star</strong>！</li>
+                <li>分享给你的朋友、漫画同好！</li>
+                <li>如果您在使用过程中遇到任何问题，或有改进建议，请 <a href="https://github.com/manga-translator-ai/manga-translator-ai/issues" target="_blank" rel="noopener">提交 Issue</a>。</li>
+                <li>非常欢迎您 Fork 项目并提交 Pull Request！请参考 <a href="https://github.com/manga-translator-ai/manga-translator-ai/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener">CONTRIBUTING.md</a> (如果有的话)。</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>© 2025 Manga Translator AI. | <a href="https://github.com/manga-translator-ai/manga-translator-ai" target="_blank" rel="noopener">GitHub Repository</a> | <a href="https://manga-translator-ai.vercel.app" target="_blank" rel="noopener">Live Site</a></p>
+            <p>本项目代码采用 <strong>[MIT License]</strong> 许可证。 | 翻译服务本身及其产生的翻译结果可能受服务条款或额外许可的约束。</p>
+        </footer>
+    </div>
+</body>
+</html>
